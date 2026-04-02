@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#6200EE</color>
+    <color name="primary_dark">#3700B3</color>
+    <color name="accent">#03DAC5</color>
+    <color name="background_light">#F5F5F5</color>
+    <color name="chat_background">#E5E5E5</color>
+    <color name="green">#4CAF50</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="bottom_nav_color">#6200EE</color>
+    <color name="message_received_bg">#FFFFFF</color>
+    <color name="message_sent_bg">#6200EE</color>
+</resources>

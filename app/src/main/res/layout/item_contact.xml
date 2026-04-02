@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardElevation="1dp"
+    app:cardCornerRadius="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/ivContactAvatar"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/ic_launcher_background" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvContactName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Имя контакта"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvContactEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="email@example.com"
+                android:textSize="12sp"
+                android:textColor="@android:color/darker_gray" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/statusIndicator"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="@drawable/circle_green"
+            android:layout_marginEnd="8dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnStartChat"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="Чат"
+            android:textSize="12sp"
+            app:cornerRadius="18dp" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

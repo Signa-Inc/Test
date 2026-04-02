@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Аватар и кнопка камеры -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:id="@+id/ivAvatar"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_launcher_background"
+                android:contentDescription="@string/avatar"
+                app:civ_border_width="2dp"
+                app:civ_border_color="@color/primary" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabChangeAvatar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/ivAvatar"
+                android:layout_alignEnd="@id/ivAvatar"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="4dp"
+                android:src="@drawable/ic_image_in"
+                android:backgroundTint="@color/primary"
+                app:fabSize="mini" />
+        </RelativeLayout>
+
+        <!-- Имя пользователя -->
+        <TextView
+            android:id="@+id/tvProfileName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Имя пользователя"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Email или username -->
+        <TextView
+            android:id="@+id/tvProfileEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="user@example.com"
+            android:textSize="14sp"
+            android:textColor="@android:color/darker_gray"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Кнопка редактирования профиля -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEditProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Редактировать профиль"
+            android:textSize="14sp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            app:cornerRadius="20dp"
+            android:paddingHorizontal="24dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Разделитель -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:background="@color/background_light" />
+
+        <!-- Настройки (пункты) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+
+            <!-- Уведомления -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_notifications"
+                        android:tint="@color/primary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Уведомления"
+                        android:textSize="16sp"
+                        android:layout_marginStart="16dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_chevron_right"
+                    android:tint="@android:color/darker_gray" />
+            </RelativeLayout>
+
+            <!-- Конфиденциальность -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_lock"
+                        android:tint="@color/primary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Конфиденциальность"
+                        android:textSize="16sp"
+                        android:layout_marginStart="16dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_chevron_right"
+                    android:tint="@android:color/darker_gray" />
+            </RelativeLayout>
+
+            <!-- Статус (аналог "О себе") -->
+            <RelativeLayout
+                android:id="@+id/btnChangeStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_status"
+                        android:tint="@color/primary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="О себе"
+                        android:textSize="16sp"
+                        android:layout_marginStart="16dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvProfileStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/chevron"
+                    android:layout_centerVertical="true"
+                    android:text="Онлайн"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/darker_gray"
+                    android:layout_marginEnd="8dp" />
+
+                <ImageView
+                    android:id="@+id/chevron"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_chevron_right"
+                    android:tint="@android:color/darker_gray" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <!-- Разделитель перед выходом -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:background="@color/background_light" />
+
+        <!-- Кнопка выхода -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Выйти"
+            android:textSize="16sp"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            app:icon="@drawable/ic_logout"
+            app:iconGravity="textStart"
+            android:gravity="center"
+            android:textColor="@android:color/holo_red_dark"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp" />
+
+    </LinearLayout>
+</ScrollView>

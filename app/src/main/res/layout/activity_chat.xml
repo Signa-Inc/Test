@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/chat_background">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_chat"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary"
+        android:elevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/ivChatAvatar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_launcher_background"
+                android:layout_marginEnd="12dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvChatName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Имя собеседника"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvChatStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Онлайн"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_messages"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:clipToPadding="false"
+        android:reverseLayout="true" />
+
+    <!-- Область ввода сообщения -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:background="@android:color/white"
+        android:elevation="4dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:endIconMode="clear_text">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Введите сообщение..."
+                android:maxLines="5"
+                android:inputType="textMultiLine" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_message_tosend"
+            android:backgroundTint="@color/primary" />
+
+    </LinearLayout>
+
+</LinearLayout>
